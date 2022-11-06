@@ -1,3 +1,4 @@
+from collections import defaultdict
 TokenType = str
 
 class Token:
@@ -5,6 +6,17 @@ class Token:
 		self.Type = Type
 		self.Literal = Literal
 
+	def LookupIdent(self, ident):
+		if ident == "":
+			return EOF
+		keywords = defaultdict(str)
+		keywords["fn"] = FUNCTION
+		keywords["let"] = LET
+
+		if keywords[ident] == "":
+			return IDENT
+		else:
+			return keywords[ident]
 
 ILLEGAL = "ILLEGAL"
 EOF = "EOF"
