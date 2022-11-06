@@ -19,6 +19,9 @@ if (5 < 10) {
 } else {
     return false;
 }
+
+10 == 10;
+10 != 9;
 """
 
 class TestNextToken():
@@ -39,7 +42,6 @@ class TestNextToken():
 
         for tt in tests:
             tok = l.NextToken()
-            print(tok.Literal)
             assert tok.Type == tt.Type
             assert tok.Literal == tt.Literal
 
@@ -110,6 +112,14 @@ class TestNextToken():
             token.Token(token.FALSE , "false"),
             token.Token(token.SEMICOLON , ";"),
             token.Token(token.RBRACE , "}"),
+            token.Token(token.INT, "10"),
+            token.Token(token.EQ, "=="),
+            token.Token(token.INT, "10"),
+            token.Token(token.SEMICOLON , ";"),
+            token.Token(token.INT, "10"),
+            token.Token(token.NOT_EQ, "!="),
+            token.Token(token.INT, "9"),
+            token.Token(token.SEMICOLON , ";"),
             token.Token(token.EOF , "")]
 
 
