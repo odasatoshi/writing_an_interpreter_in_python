@@ -12,6 +12,11 @@ class Token:
 		keywords = defaultdict(str)
 		keywords["fn"] = FUNCTION
 		keywords["let"] = LET
+		keywords["true"] = TRUE 
+		keywords["false"] = FALSE  
+		keywords["if"] = IF  
+		keywords["else"] = ELSE 
+		keywords["return"] = RETURN  
 
 		if keywords[ident] == "":
 			return IDENT
@@ -43,6 +48,12 @@ RPAREN = ")"
 LBRACE ="{"
 RBRACE ="}"
 
-
+# 予約語
 FUNCTION = "FUNCTION"
 LET = "LET"
+
+TRUE = "TRUE"
+FALSE = "FALSE"
+IF = "IF"
+ELSE = "ELSE"
+RETURN = "RETURN"

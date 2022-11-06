@@ -13,6 +13,12 @@ let add = fn(x, y) {
 let result = add(five, ten);
 !-/*5;
 5 < 10 > 5;
+
+if (5 < 10) {
+    return true;
+} else {
+    return false;
+}
 """
 
 class TestNextToken():
@@ -87,7 +93,25 @@ class TestNextToken():
             token.Token(token.GT, ">"),
             token.Token(token.INT, "5"),
             token.Token(token.SEMICOLON , ";"),
+            token.Token(token.IF, "if"),
+            token.Token(token.LPAREN , "("),
+            token.Token(token.INT, "5"),
+            token.Token(token.LT, "<"),
+            token.Token(token.INT, "10"),
+            token.Token(token.RPAREN , ")"),
+            token.Token(token.LBRACE , "{"),
+            token.Token(token.RETURN , "return"),
+            token.Token(token.TRUE , "true"),
+            token.Token(token.SEMICOLON , ";"),
+            token.Token(token.RBRACE , "}"),
+            token.Token(token.ELSE , "else"),
+            token.Token(token.LBRACE , "{"),
+            token.Token(token.RETURN , "return"),
+            token.Token(token.FALSE , "false"),
+            token.Token(token.SEMICOLON , ";"),
+            token.Token(token.RBRACE , "}"),
             token.Token(token.EOF , "")]
+
 
         l = lexer.Lexer(_input2)
 
