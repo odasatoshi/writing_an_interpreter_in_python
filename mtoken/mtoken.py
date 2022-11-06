@@ -24,8 +24,16 @@ EOF = "EOF"
 IDENT = "IDENT"
 INT = "INT"
 
+# 演算子
 ASSIGN = "="
 PLUS = "+"
+MINUS = "-"
+BANG = "!"
+ASTERISK = "*"
+SLASH = "/"
+
+LT = "<"
+GT = ">"
 
 COMMA = ","
 SEMICOLON = ";"

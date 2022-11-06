@@ -33,6 +33,18 @@ class Lexer:
             tok = self.newToken(token.COMMA, self.ch)
         elif self.ch == "+":
             tok = self.newToken(token.PLUS, self.ch)
+        elif self.ch == "-":
+            tok = self.newToken(token.MINUS, self.ch)
+        elif self.ch == "!":
+            tok = self.newToken(token.BANG, self.ch)
+        elif self.ch == "/":
+            tok = self.newToken(token.SLASH, self.ch)
+        elif self.ch == "*":
+            tok = self.newToken(token.ASTERISK, self.ch)
+        elif self.ch == "<":
+            tok = self.newToken(token.LT, self.ch)
+        elif self.ch == ">":
+            tok = self.newToken(token.GT, self.ch)
         elif self.ch == "{":
             tok = self.newToken(token.LBRACE, self.ch)
         elif self.ch == "}":

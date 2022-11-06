@@ -11,6 +11,8 @@ let add = fn(x, y) {
 };
 
 let result = add(five, ten);
+!-/*5;
+5 < 10 > 5;
 """
 
 class TestNextToken():
@@ -72,6 +74,18 @@ class TestNextToken():
             token.Token(token.COMMA , ","),
             token.Token(token.IDENT , "ten"),
             token.Token(token.RPAREN , ")"),
+            token.Token(token.SEMICOLON , ";"),
+            token.Token(token.BANG, "!"),
+            token.Token(token.MINUS, "-"),
+            token.Token(token.SLASH, "/"),
+            token.Token(token.ASTERISK, "*"),
+            token.Token(token.INT, "5"),
+            token.Token(token.SEMICOLON , ";"),
+            token.Token(token.INT, "5"),
+            token.Token(token.LT, "<"),
+            token.Token(token.INT, "10"),
+            token.Token(token.GT, ">"),
+            token.Token(token.INT, "5"),
             token.Token(token.SEMICOLON , ";"),
             token.Token(token.EOF , "")]
 
