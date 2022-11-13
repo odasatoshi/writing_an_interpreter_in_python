@@ -6,7 +6,7 @@ class Token:
 		self.Type = Type
 		self.Literal = Literal
 
-	def LookupIdent(self, ident):
+	def LookupIdent(self, ident) -> str:
 		if ident == "":
 			return EOF
 		keywords = defaultdict(str)

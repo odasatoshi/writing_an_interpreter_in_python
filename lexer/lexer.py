@@ -8,7 +8,7 @@ class Lexer:
         self.ch = ""
         self.readChar()
     
-    def NextToken(self):
+    def NextToken(self) -> token.Token:
         tok = token.Token()
 
         self.skipWhitespace()
@@ -77,7 +77,7 @@ class Lexer:
         self.readChar()
         return tok
 
-    def readChar(self):
+    def readChar(self) -> None:
         if self.readPosition >= len(self.input):
             self.ch = ""
         else:
@@ -85,7 +85,7 @@ class Lexer:
         self.position = self.readPosition
         self.readPosition += 1
 
-    def peekChar(self):
+    def peekChar(self) -> None:
         if self.readPosition >= len(self.input):
             return ""
         else:
@@ -97,22 +97,22 @@ class Lexer:
         self.Literal = Literal
         return self
 
-    def readIdentifier(self):
+    def readIdentifier(self) -> str:
         position = self.position
         while self.isLetter(self.ch):
             self.readChar()
         return self.input[position:self.position]
 
-    def readNumber(self):
+    def readNumber(self) -> str:
         position = self.position
         while self.isDigit(self.ch):
             self.readChar()
         return self.input[position:self.position]
 
-    def isLetter(self, ch):
+    def isLetter(self, ch) -> bool:
         return (str(ch).isalpha() or ch == '_')
 
-    def isDigit(self, ch):
+    def isDigit(self, ch) -> bool:
         return str(ch).isdigit()
 
     def skipWhitespace(self):
